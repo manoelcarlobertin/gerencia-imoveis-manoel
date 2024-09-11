@@ -1,6 +1,6 @@
 module Admin
   class PropertyTypesController < BaseController
-    before_action :load_property_type, only: [:edit, :update, :destroy]
+    before_action :load_property_type, only: [ :edit, :update, :destroy ]
 
     def index
       @property_types = PropertyType.order(:name)
@@ -14,7 +14,7 @@ module Admin
       @property_type = PropertyType.new property_type_params
 
       if @property_type.save
-        redirect_to admin_property_types_path, notice: 'Tipo de Imóvel criado com sucesso.'
+        redirect_to admin_property_types_path, notice: "Tipo de Imóvel criado com sucesso."
       else
         render :new, status: :unprocessable_entity
       end
@@ -25,7 +25,7 @@ module Admin
 
     def update
       if @property_type.update property_type_params
-        redirect_to admin_property_types_path, notice: 'Tipo de Imóvel atualizado com sucesso.'
+        redirect_to admin_property_types_path, notice: "Tipo de Imóvel atualizado com sucesso."
       else
         render :edit, status: :unprocessable_entity
       end
@@ -33,7 +33,7 @@ module Admin
 
     def destroy
       @property_type.destroy
-      redirect_to admin_property_types_path, notice: 'Tipo de Imóvel removido com sucesso.'
+      redirect_to admin_property_types_path, notice: "Tipo de Imóvel removido com sucesso."
     end
 
     private
