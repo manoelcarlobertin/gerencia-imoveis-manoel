@@ -62,4 +62,4 @@ gem "simple_form", "~> 5.3"
 
 gem "view_component", "~> 3.12"
 
-gem "solid_queue", "~> 0.3.3"
+gem "solid_queue", "~> 0.9.0"
