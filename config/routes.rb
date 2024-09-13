@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+  get "/users/sign_out", to: "sessions#destroy"
 
   resource :dashboard, only: [ :show ]
 
   namespace :admin do
+    resources :properties
+    resources :property_standard_items, except: [ :show ]
+    resources :property_situations, except: [ :show ]
     resources :property_types, except: [ :show ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,7 +21,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   get "/favicon.ico", to: "application#favicon"
-  get "/static/avatars/:id.jpg", to: "avatars#show"
+  # get "/static/avatars/:id.jpg", to: "avatars#show"
 
   # Defines the root path route ("/") - Daniel alterou aqui embaixo.
   root "dashboards#go_to_home"

@@ -32,7 +32,8 @@
           ></span>
           <div class="d-none d-xl-block ps-2">
             <div><%= current_user.email %></div>
-            <div class="mt-1 small text-secondary"><%= current_user.email %></div>
+            <!--div class="mt-1 small text-secondary"><%= current_user.email %></div-->
+            <%= link_to "Sair", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
           </div>
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
