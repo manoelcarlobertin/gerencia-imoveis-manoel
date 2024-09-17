@@ -2,7 +2,7 @@
   <div class="card-header">
     <h3 class="card-title">Lista</h3>
     <div class="card-actions">
-      <%= link_to new_admin_property_type_path, class: "btn btn-primary" do %>
+      <%= link_to new_admin_property_standard_item_path, class: "btn btn-primary" do %>
         <i class="ti ti-plus"></i>
         Adicionar Novo
       <% end %>
@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <%#= render @property_types %>
+        <%= render @property_standard_items %>
       </tbody>
     </table>
   </div>

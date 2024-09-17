@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   get "/favicon.ico", to: "application#favicon"
-  # get "/static/avatars/:id.jpg", to: "avatars#show"
+  get "/static/avatars/:id.jpg", to: "avatars#show"
 
   # Defines the root path route ("/") - Daniel alterou aqui embaixo.
   root "dashboards#go_to_home"

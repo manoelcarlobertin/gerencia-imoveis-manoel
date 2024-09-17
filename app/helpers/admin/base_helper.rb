@@ -15,3 +15,5 @@ module Admin::BaseHelper
     %w[create new].include?(action_name) ? resource_new_title : resource_edit_title
   end
 end
+# gsub -> eu consigo substituir "/"" por "ponto"
+# estou concatenando e colocar os nomes dos controlers (collection, edit e new).
